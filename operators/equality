@@ -1,0 +1,16 @@
+module equality_operator;
+  logic[3:0] a,b;
+
+ initial
+     begin
+      a=4'bx1zx;b=4'b1011; 
+        a=4'b1011;b=4'b1011; 
+       $display(" a===b(case equality)=%B",a===b);
+       $display(" a!==b(case inequality)=%B",a!==b);
+       $display(" a==b(logical equality)=%B",a==b);
+       $display(" a!=b(logical inequality)=%B",a!=b);
+       $display(" a==?b(equality)=%B",a==?b);
+       $display(" a!=?b(inequality)=%B",a!=?b);
+      
+     end
+endmodule
