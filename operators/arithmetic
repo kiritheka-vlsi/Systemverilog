@@ -1,0 +1,31 @@
+module arithmetic_operator;
+  reg  [3:0] a,b;
+  int result;
+
+  initial begin
+    a=4'ha;  
+    b=4'hb;  
+
+    $display("verilog");
+    $display("a+b=%0d",a+b);
+    $display("a-b=%0d",a-b);
+    $display("a*b=%0d",a*b);
+    $display("a/b=%0d",a/b);
+    $display("a modulus b=%0d",a%b);
+    result=a**b;
+    $display("a Pow b=%0d",result);
+    
+    $display("sv");
+    a+=b;
+    $display("(a+=b)=%0d",a);
+    a-=b;
+    $display("(a-=b)=%0d",a-b);
+    a*=b;
+    $display("(a*=b)=%0d",a*b);
+    a/=b;
+    $display("(a/=b)=%0d",a/b);
+    a%=b;
+    $display("(a modulus=b)=%0d",a%b);
+    #1 $finish;
+end
+endmodule
