@@ -1,0 +1,24 @@
+module replication;
+  bit [4:0] a;
+  bit [5:0] b;
+  bit [31:0] c;
+  bit [31:0] d;
+  
+  task automatic display();
+     begin
+      c={4{a}};
+      $display("replication of a = %0b",c);
+      d={4{a[3:0]}};
+         $display("replication of a = %0b",d);
+       c={4{b}};
+       $display("replication of b = %0b",c);
+       d={4{b[3:0]}};
+       $display("replication of b = %0b",d);
+     end
+         endtask
+         initial begin
+           #1 a = 5'b10101;
+           #1 b = 6'b11101;
+           display();
+         end
+         endmodule
