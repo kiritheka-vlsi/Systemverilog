@@ -1,0 +1,20 @@
+module set_membership;
+  logic [31:0]a;
+  logic [31:0]b;
+  task automatic display();
+    $display("the value is in a %0b",a inside{1,2,3,4});
+    $display("the value is in a %0b",a inside{[1:5]});
+    $display("the value is in a %0b",a inside{1,[2:4],5}); 
+    $display(" a inside {1,2,3,4} =%B",a inside {1,2,3,4});
+    $display(" b inside {[0:5]} =%B",b inside {[0:5]});
+    $display(" a inside {8'h0,8'hF} =%B",a inside {8'h0});
+    $display(" b inside {[8'd10:8'd20]} =%B",b inside {[8'd10:8'd20]});
+                                                        endtask
+                                                        
+  
+  initial begin 
+   a = 8'd5;
+    b = 8'd7;
+    display();
+  end
+endmodule
