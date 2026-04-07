@@ -1,0 +1,16 @@
+module tb;
+bit signed[7:0]a ;
+bit signed[7:0]b;
+initial begin
+  a = 8'b11100101;
+  b = 8'b01110111;
+  $display("ALS = %B",a<<<2);
+  $display("ALS = %B",b<<<2);
+  $display("ARS = %B",a>>>2);
+  $display("ARS = %B",b>>>2);
+  $display("LLS = %B",a<<2);
+  $display("LLS = %B",b<<2);
+  $display("LRS = %B",a>>2);
+  $display("LRS = %B",b>>2);
+end
+endmodule
