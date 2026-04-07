@@ -1,0 +1,26 @@
+
+module bitwise_operator;
+  reg  [3:0] a,b;
+
+  task automatic display();
+     begin
+      
+       $display("a&b=%b",a&b);
+       $display("~(a&b)=%b",~(a&b));
+       $display("a|b=%b",a|b);
+       $display("~(a|b)=%b",~(a|b));
+       $display("a^b=%b",a^b);
+       $display("~(a^b)=%b",~(a^b));
+       $display("~a=%b",~a);
+      
+     end
+  endtask
+    
+  initial begin
+    a=4'he;b=4'hd; 
+    display();
+   
+    #1 $finish;
+    
+end
+endmodule
