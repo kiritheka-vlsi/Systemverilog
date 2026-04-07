@@ -1,0 +1,22 @@
+module concatenation;
+  logic [7:0]a,b;
+  logic [15:0]c;
+
+  task automatic display();
+     begin
+       
+       c={a,b};
+       $display(" {a,b}=%B",c);
+       $display(" {b,a}=%B",{b,a});
+       $display(" {a[3:0],b[6:4]}=%B",{a[3:0],b[6:4]});
+      
+     end
+  endtask
+    
+  initial begin
+    a=8'he;b=8'hd;
+    display();
+    #1 a=8'b11;b=8'b0111;  
+    display();
+  end
+endmodule
