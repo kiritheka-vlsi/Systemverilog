@@ -1,0 +1,15 @@
+module logical_operator;
+  reg  [3:0] a,b;
+
+  initial
+     begin
+      
+    a=4'he;b=4'hd; 
+       $display(" a&&b=%B",a&&b);
+       $display(" a||b=%B",a||b);
+       $display(" !a=%B",!a);
+       $display("a -> b (!a || b) = %b", (!a || b));
+       $display("a <-> b = %b", ((!a || b) && (a || !b)));
+
+     end
+endmodule
